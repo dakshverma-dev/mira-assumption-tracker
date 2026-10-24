@@ -44,6 +44,7 @@ export function createAster(): Workspace {
     assumptions,
     evidence: [
       {
+        isFictional: true,
         id: crypto.randomUUID(),
         assumptionId: assumptions.find(
           (a) => a.driverKey === "operatingMargin",

@@ -38,6 +38,7 @@ const result = z
   .strict();
 export const evidenceSchema = z
   .object({
+    isFictional: z.boolean().optional(),
     id,
     assumptionId: id,
     sourceTitle: text.max(200),

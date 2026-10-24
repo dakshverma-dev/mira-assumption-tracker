@@ -161,7 +161,9 @@ export default function App() {
       setSaveStatus(saved.success ? "Saved on this device" : "Could not save");
       if (!saved.success) setNotice(saved.error);
     }, 300);
-    const flushOnLeave = () => { saveWorkspace(workspace); };
+    const flushOnLeave = () => {
+      saveWorkspace(workspace);
+    };
     window.addEventListener("pagehide", flushOnLeave);
     return () => {
       window.clearTimeout(timer);
@@ -583,7 +585,7 @@ export default function App() {
                       )}
                       <span>·</span>
                       <span>{date(entry.observedOn)}</span>
-                      {workspace.isSample && (
+                      {(workspace.isSample || entry.isFictional) && (
                         <>
                           <span>·</span>
                           <span>Fictional</span>

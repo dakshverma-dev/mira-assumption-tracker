@@ -38,6 +38,7 @@ export type Assumption = {
   reviewOn?: string;
 };
 export type Evidence = {
+  isFictional?: boolean;
   id: string;
   assumptionId: string;
   sourceTitle: string;
