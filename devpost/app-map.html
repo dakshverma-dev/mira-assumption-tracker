@@ -1,11 +1,213 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mira — code map</title><style>
-*{box-sizing:border-box}body{margin:0;background:#f5f8fc;color:#172b4d;font:15px/1.7 system-ui,sans-serif}main{max-width:920px;margin:60px auto;padding:0 25px}h1{font-size:40px;letter-spacing:-1.5px;margin:7px 0}p{color:#6a7890}.eyebrow{font-size:11px;letter-spacing:2px;color:#315de8}section,details{background:white;border:1px solid #dfe7f3;border-radius:9px;margin-top:16px;padding:23px}h2{font-size:18px;margin:0 0 10px}summary{font-weight:600;cursor:pointer;color:#315de8}code{font-size:12px;background:#f1f5ff;color:#315de8;border-radius:4px;padding:3px 5px;overflow-wrap:anywhere}a{color:#315de8}li{margin:9px 0}.flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.flow span{background:#eff4ff;padding:10px 14px;border-radius:5px;font-size:13px}.flow b{color:#8098c6}.label{font-size:11px;color:#8a9ab2}footer{font-size:12px;color:#8999b0;margin:25px 0}a:focus-visible,summary:focus-visible{outline:3px solid #91b4ff;outline-offset:4px}@media(max-width:600px){main{margin:25px auto}h1{font-size:31px}}
-</style></head><body><main><div class="eyebrow">MIRA / AN EXPLORABLE CODE MAP</div><h1>Follow a belief into a number.</h1><p>The same path connects the product, its implementation and the checks that keep the result trustworthy. Expand a step to find its code.</p>
-<section><h2>The working loop</h2><div class="flow"><span>Thesis & assumptions</span><b>→</b><span>Linked evidence</span><b>→</b><span>Scenario</span><b>→</b><span>Saved record</span></div></section>
-<details open><summary>1. The original belief and its inputs</summary><p><code>src/demo/aster.ts → createAster</code> creates the fictional thesis and four stable-ID assumptions. <code>src/domain/types.ts → getDrivers</code> derives calculator inputs without changing the stored records.</p><p>The editors in <code>src/components/Editors.tsx</code> save a complete valid baseline; they do not mutate a historical scenario.</p></details>
-<details><summary>2. The evidence remains attached</summary><p><code>EvidenceEditor</code> captures the observation separately from the analyst's classification and explanation. <code>src/App.tsx</code> filters by assumption ID, so renaming a company cannot break a link.</p><p><code>src/domain/schema.ts → validateWorkspace</code> rejects dangling references, duplicate IDs, impossible dates and non-web source URLs.</p></details>
-<details><summary>3. A transparent scenario</summary><p><code>src/domain/calculate.ts → calculateScenario</code> validates the base and independent overrides, then calculates revenue × (1 + growth)<sup>years</sup> × margin. A zero base yields no percentage instead of a division error.</p><p><code>src/components/Projection.tsx</code> plots yearly operating profit with an accessible text description. <code>tests/domain.test.ts</code> checks the exact £32.2102m / £22.7498348192m fixture and invalid inputs.</p></details>
-<details><summary>4. A record you can revisit</summary><p><code>saveScenario</code> in <code>src/App.tsx</code> copies the original base, overrides and result into a snapshot. Current baseline edits cannot rewrite it.</p><p><code>src/lib/storage.ts</code> writes only validated data. <code>src/lib/importExport.ts</code> validates a whole file before the UI offers replacement. Read failures preserve existing bytes and pause autosave.</p></details>
-<section><h2>A practice to reuse</h2><p>Trace one surprising output back through its input, transformation and persistence boundary. Keep a known numerical fixture beside the pure function. Test the boundary case—here, zero base profit—before polishing the result.</p><div class="label">Reference route: App.tsx → calculate.ts → schema.ts → storage.ts → domain.test.ts</div></section>
-<footer>This is a factual code reference, not a claim that a learner completed a code tour or reflection. Personal learning answers remain separate.</footer></main></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mira — code map</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #fdfcfc;
+        color: #000;
+        font:
+          15px/1.7 Inter,
+          system-ui,
+          sans-serif;
+      }
+      main {
+        max-width: 960px;
+        margin: 64px auto;
+        padding: 0 28px;
+      }
+      h1 {
+        font-size: 48px;
+        font-weight: 300;
+        line-height: 1.12;
+        letter-spacing: -0.02em;
+        margin: 16px 0 20px;
+      }
+      p {
+        color: #777169;
+      }
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.12em;
+        color: #777169;
+      }
+      section,
+      details {
+        background: #f5f3f1;
+        border: 0;
+        border-radius: 20px;
+        margin-top: 20px;
+        padding: 28px 32px;
+      }
+      h2 {
+        font-size: 28px;
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        margin: 0 0 16px;
+      }
+      summary {
+        font-weight: 400;
+        cursor: pointer;
+        color: #000;
+      }
+      code {
+        font-size: 12px;
+        background: #ebe8e4;
+        color: #44403b;
+        border-radius: 4px;
+        padding: 3px 5px;
+        overflow-wrap: anywhere;
+      }
+      a {
+        color: #000;
+      }
+      li {
+        margin: 9px 0;
+      }
+      .flow {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .flow span {
+        background: #fdfcfc;
+        border: 1px solid #ebe8e4;
+        padding: 10px 16px;
+        border-radius: 9999px;
+        font-size: 13px;
+      }
+      .flow b {
+        color: #a59f97;
+        font-weight: 300;
+      }
+      .label {
+        font-size: 11px;
+        color: #777169;
+      }
+      footer {
+        font-size: 12px;
+        color: #777169;
+        border-top: 1px solid #ebe8e4;
+        padding-top: 24px;
+        margin: 32px 0;
+      }
+      a:focus-visible,
+      summary:focus-visible {
+        outline: 2px solid #44403b;
+        outline-offset: 5px;
+      }
+      @media (max-width: 600px) {
+        main {
+          margin: 32px auto;
+          padding: 0 20px;
+        }
+        h1 {
+          font-size: 36px;
+        }
+        section,
+        details {
+          padding: 24px;
+        }
+        h2 {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="eyebrow">MIRA / AN EXPLORABLE CODE MAP</div>
+      <h1>Follow a belief into a number.</h1>
+      <p>
+        The same path connects the product, its implementation and the checks
+        that keep the result trustworthy. Expand a step to find its code.
+      </p>
+      <section>
+        <h2>The working loop</h2>
+        <div class="flow">
+          <span>Thesis & assumptions</span><b>→</b><span>Linked evidence</span
+          ><b>→</b><span>Scenario</span><b>→</b><span>Saved record</span>
+        </div>
+      </section>
+      <details open>
+        <summary>1. The original belief and its inputs</summary>
+        <p>
+          <code>src/demo/aster.ts → createAster</code> creates the fictional
+          thesis and four stable-ID assumptions.
+          <code>src/domain/types.ts → getDrivers</code> derives calculator
+          inputs without changing the stored records.
+        </p>
+        <p>
+          The editors in <code>src/components/Editors.tsx</code> save a complete
+          valid baseline; they do not mutate a historical scenario.
+        </p>
+      </details>
+      <details>
+        <summary>2. The evidence remains attached</summary>
+        <p>
+          <code>EvidenceEditor</code> captures the observation separately from
+          the analyst's classification and explanation.
+          <code>src/App.tsx</code> filters by assumption ID, so renaming a
+          company cannot break a link.
+        </p>
+        <p>
+          <code>src/domain/schema.ts → validateWorkspace</code> rejects dangling
+          references, duplicate IDs, impossible dates and non-web source URLs.
+        </p>
+      </details>
+      <details>
+        <summary>3. A transparent scenario</summary>
+        <p>
+          <code>src/domain/calculate.ts → calculateScenario</code> validates the
+          base and independent overrides, then calculates revenue × (1 +
+          growth)<sup>years</sup> × margin. A zero base yields no percentage
+          instead of a division error.
+        </p>
+        <p>
+          <code>src/components/Projection.tsx</code> plots yearly operating
+          profit with an accessible text description.
+          <code>tests/domain.test.ts</code> checks the exact £32.2102m /
+          £22.7498348192m fixture and invalid inputs.
+        </p>
+      </details>
+      <details>
+        <summary>4. A record you can revisit</summary>
+        <p>
+          <code>saveScenario</code> in <code>src/App.tsx</code> copies the
+          original base, overrides and result into a snapshot. Current baseline
+          edits cannot rewrite it.
+        </p>
+        <p>
+          <code>src/lib/storage.ts</code> writes only validated data.
+          <code>src/lib/importExport.ts</code> validates a whole file before the
+          UI offers replacement. Read failures preserve existing bytes and pause
+          autosave.
+        </p>
+      </details>
+      <section>
+        <h2>A practice to reuse</h2>
+        <p>
+          Trace one surprising output back through its input, transformation and
+          persistence boundary. Keep a known numerical fixture beside the pure
+          function. Test the boundary case—here, zero base profit—before
+          polishing the result.
+        </p>
+        <div class="label">
+          Reference route: App.tsx → calculate.ts → schema.ts → storage.ts →
+          domain.test.ts
+        </div>
+      </section>
+      <footer>
+        This is a factual code reference, not a claim that a learner completed a
+        code tour or reflection. Personal learning answers remain separate.
+      </footer>
+    </main>
+  </body>
+</html>

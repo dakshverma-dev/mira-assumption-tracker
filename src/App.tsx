@@ -308,15 +308,15 @@ export default function App() {
       <header className="topbar">
         <div className="topbar-inner">
           <a href="#" className="brand" aria-label="Mira home">
-            <span className="brand-mark">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M5 18V6l7 7 7-7v12" />
-              </svg>
-            </span>
             mira
             <span className="brand-divider" />
             <span className="brand-caption">Assumption tracker</span>
           </a>
+          <nav className="workspace-nav" aria-label="Research sections">
+            <a href="#assumptions">Assumptions</a>
+            <a href="#evidence">Evidence</a>
+            <a href="#scenario">Scenario</a>
+          </nav>
           <div
             className={`save-status ${saveStatus === "Could not save" ? "failed" : ""}`}
             role="status"

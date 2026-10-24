@@ -18,11 +18,11 @@ Source: `scope.md > The Core Loop` and the supplied Mira brief. Implementation c
 
 ## Screens and Layout
 
-One route `/`, maximum 1040px content width. Header: Mira identity, local save status, import/export actions. Thesis across the top. Desktop two-column body: assumptions and linked evidence on the left; scenario and saved snapshots on the right. Mobile stacks the columns. A labelled thesis editor and an evidence dialog provide focused editing. All controls have accessible names and visible focus.
+One route `/`, maximum 1280px content width, following the user's ElevenLabs reference. Header: Mira wordmark, links to research sections and local save status. Import/export actions follow in the workspace toolbar. Thesis across the top. Desktop two-column body: assumptions and linked evidence on the left; scenario and saved snapshots on the right. Mobile stacks the columns. A labelled thesis editor and an evidence dialog provide focused editing. All controls have accessible names and visible focus.
 
 ## Look and Feel
 
-White background, dark navy text, restrained royal blue primary actions, subtle cool gray rules. DM Sans headings, Manrope body and DM Mono financial labels, served locally from font packages. Signature: a live base/scenario projection chart that follows the actual calculation. No fabricated statistics, gradients or decorative dashboard widgets.
+Eggshell #fdfcfc canvas, warm taupe #f5f3f1 feature panels, stone #ebe8e4 rules, black primary text and filled pill buttons. Inter Light 300 display headings substitute for Waldenburg as explicitly permitted by the supplied reference; Inter 400/500 body and controls, Geist Mono financial microcopy, all bundled locally. Panels have 20–24px radii and minimal elevation. Violet #0447ff is confined to the actual projection graphic. Signature: a live base/scenario chart that follows the calculation. No fabricated statistics, unrelated audio spheres or decorative dashboard widgets.
 
 ## Features and Behavior
 

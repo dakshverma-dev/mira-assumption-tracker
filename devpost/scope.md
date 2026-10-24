@@ -26,7 +26,7 @@ Load fictional Aster Products → inspect an assumption → attach and classify 
 
 ## Inspiration & Identity
 
-Agent-selected direction: a calm blue-and-white analyst workspace, precise typography, compact assumption selectors and a two-line profit projection. The chart explains the financial effect; there are no decorative scores or invented confidence ratings.
+User-selected visual reference: the supplied ElevenLabs design system. Eggshell canvas, warm taupe panels, light Inter display typography (the reference's documented Waldenburg substitute), black pill actions, and a restrained wordmark. Compact assumption selectors and a two-line profit projection remain central. Violet is reserved for the chart rather than interface chrome. There are no decorative scores or invented confidence ratings.
 
 ## Why This Matters to the Learner
 

@@ -2,7 +2,7 @@
 
 A local research workspace for an investor's thesis, its financial assumptions, linked evidence and a transparent operating-profit scenario. Aster Products and every seeded observation are fictional.
 
-![Mira's research workspace and downside scenario](docs/screenshots/mira-desktop.jpg)
+![Mira's research workspace using the supplied ElevenLabs design](docs/screenshots/mira-elevenlabs-desktop.jpg)
 
 Hosted builds and current submission state are recorded in [the submission record](docs/submission-record.md). A 30-day preview access link is included in the build handoff.
 
@@ -79,6 +79,7 @@ The official [Devpost Learn Skill Pack](https://github.com/challengepost/learn-a
 - [Reproduction and demo mechanics](docs/demo.md)
 - [Build provenance](docs/build-log.md)
 - [Submission record](docs/submission-record.md)
+- [Visual reference and implementation](docs/design-reference.md)
 
 The personal learner profile, credentials and installed skill directories are excluded from version control and deployments. This does not make chat content private from an AI provider.
 

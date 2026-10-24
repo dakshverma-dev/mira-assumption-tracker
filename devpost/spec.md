@@ -28,7 +28,7 @@ Node v22.19.0, npm 11.14.0. `npm ci`, `npm run dev -- --host 127.0.0.1`, open th
 
 ## Look and Feel
 
-Tokens: ink #172b4d, blue #315de8, muted #6a7890, line #e5eaf2, surface #f5f8fc, white #ffffff. Negative changes #b04a42 with text labels; positive #22725e. DM Sans headings, Manrope body, DM Mono figures. 1040px maximum width; 24px two-column gap. Chart lines use dash/solid differentiation as well as color. Reduced motion support, labelled inputs, native form validation and a keyboard-safe dialog.
+User-supplied ElevenLabs reference now governs the visuals. `src/design-tokens.css` preserves its CSS properties: eggshell #fdfcfc, taupe #f5f3f1, stone #ebe8e4, ink #000000, graphite #44403b, smoke #777169 and ash #a59f97. Violet #0447ff is used only inside the projection SVG and its line legend. Buttons and all interface controls remain monochrome. Inter 300 is the documented substitute for unavailable Waldenburg; body and controls use Inter 400/500, with Geist Mono 400 for technical figures. Locally bundled font packages replace the earlier fonts. 1280px maximum width, 32px desktop column gap, 20–24px feature-panel radii and fully rounded buttons/tags. Mobile stacks at 940px; narrower screens use two-by-two assumption selectors. Dash/solid chart differentiation, directional labels, reduced motion and keyboard focus remain.
 
 ## Components
 

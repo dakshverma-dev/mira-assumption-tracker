@@ -20,3 +20,12 @@
 ## Reuse and services
 
 Standard npm dependencies are pinned by the lockfile. The official skill pack supplied workflow instructions/templates, not application code. No existing Mira, FairLens or ParityBridge application code was reused. No model API, market feed, database or other runtime service is used. Open-source attribution is in `docs/third-party-notices.md` and bundled font licences.
+
+## Visual revision: supplied ElevenLabs reference
+
+- User selected the local ElevenLabs design folder after the initial working build.
+- Read its full design description, CSS properties and theme. Imported the vanilla CSS tokens, replacing the earlier cool palette with eggshell/taupe/stone, black pill controls and light display typography.
+- Switched bundled fonts to Inter and Geist Mono; Inter 300 is the reference's explicit Waldenburg substitute. Included new font licence notices and retained historical notices.
+- Changed the Mira identity to a monochrome wordmark, restyled all panels/editors/empty states, and kept the chart accent inside the actual product visual. Added working section anchors in the header.
+- Restyled the explorable map and updated the scope, PRD and technical spec so they describe the delivered design rather than the earlier direction.
+- All 40 existing tests and production build passed. Desktop/mobile layouts, the method dialog and the numerical downside scenario were exercised in the browser. Domain, persistence and import logic were not changed by this revision.

@@ -35,3 +35,9 @@ Storage corruption/quota are verified through injected storage adapters in autom
 - Deployed browser checks: edit company/thesis, preserve seeded fictional evidence labels after changing the company, cancel reset without losing changes, explicitly reset to Aster, and reproduce the downside fixture.
 - Final desktop screenshot and 390px mobile screenshot captured from the latest preview. Mobile document width 376px did not exceed the measured viewport 391px.
 - Local explorable app map loaded successfully and displayed its code paths and expandable steps.
+
+## ElevenLabs design revision
+
+The user explicitly selected their supplied ElevenLabs reference. The app now uses its eggshell/taupe/stone tokens, black pill buttons, 20–24px panels, Inter Light display substitute and Geist Mono figures. The projection is the only chromatic product graphic. The code map also follows the warm monochrome direction.
+
+All 40 existing tests passed after the TSX/CSS/font changes; production build passed. Browser checks verified the formula dialog, working section navigation, retained downside result and saved records, computed eggshell canvas and 300 heading weight. Layout was checked at 320px, 390px, 768px and 1440px requested viewport widths without horizontal overflow in the corresponding observations. Updated screenshot evidence: `mira-elevenlabs-desktop.jpg`, `mira-elevenlabs-mobile.jpg` and `mira-elevenlabs-method.jpg`.

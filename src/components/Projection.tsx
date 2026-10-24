@@ -34,7 +34,7 @@ export function Projection({
             x2="296"
             y1={y(max * f)}
             y2={y(max * f)}
-            stroke="#e7edf6"
+            stroke="var(--color-stone)"
             strokeDasharray="3 4"
           />
           <text x="29" y={y(max * f) + 3} textAnchor="end">
@@ -44,20 +44,20 @@ export function Projection({
       ))}
       <path
         d={`${path(scenarioPoints)} L${x(scenario.years)},137 L38,137 Z`}
-        fill="#315de8"
+        fill="var(--color-violet-spark)"
         fillOpacity="0.055"
       />
       <path
         d={path(basePoints)}
         fill="none"
-        stroke="#99a7bd"
+        stroke="var(--color-ash)"
         strokeWidth="2"
         strokeDasharray="5 5"
       />
       <path
         d={path(scenarioPoints)}
         fill="none"
-        stroke="#315de8"
+        stroke="var(--color-violet-spark)"
         strokeWidth="2.8"
         strokeLinecap="round"
       />
@@ -65,8 +65,8 @@ export function Projection({
         cx={x(scenario.years)}
         cy={y(scenarioPoints.at(-1)!)}
         r="4.5"
-        fill="#315de8"
-        stroke="white"
+        fill="var(--color-violet-spark)"
+        stroke="var(--color-warm-taupe)"
         strokeWidth="2"
       />
       <text x="38" y="158">
