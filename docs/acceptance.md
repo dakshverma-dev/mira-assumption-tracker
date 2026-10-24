@@ -26,3 +26,12 @@ Date: **25 October 2026 (IST)**. Initial implementation commit: `fb14a7d`. Final
 | Mobile | 390×844 viewport tested; columns stacked, assumption tiles readable, document width did not exceed viewport. |
 
 Storage corruption/quota are verified through injected storage adapters in automated tests, not claimed as browser permission changes. Human exploration and learning reflection have not been performed on the user's behalf. Planning status remains draft under explicit implementation delegation.
+
+## Final build and publication checks
+
+- Committed implementation `c8afeca` extracted with `git archive` into a fresh temporary directory. `npm ci`, all 40 tests and the production build passed there without relying on the development node_modules.
+- Public GitHub repository verified through an unauthenticated GitHub API request: public visibility, MIT licence and default branch `codex/mira`.
+- Latest Vercel preview: `dpl_691eLjCYhjHYwbowCuUcntEKYZjv`, target preview, status Ready. Loaded through its scoped share link in a fresh browser origin, without signing in.
+- Deployed browser checks: edit company/thesis, preserve seeded fictional evidence labels after changing the company, cancel reset without losing changes, explicitly reset to Aster, and reproduce the downside fixture.
+- Final desktop screenshot and 390px mobile screenshot captured from the latest preview. Mobile document width 376px did not exceed the measured viewport 391px.
+- Local explorable app map loaded successfully and displayed its code paths and expandable steps.

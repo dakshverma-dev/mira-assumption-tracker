@@ -8,9 +8,11 @@ execution: delegated
 
 Build mode: fast; autonomous implementation explicitly requested. Human reviews are not marked complete on the user's behalf.
 
+Checked slices below mean implemented and mechanically verified by the agent. They do not assert completed learner checks. Implementation commits: `fb14a7d` and `c8afeca`.
+
 ## Slices
 
-- [ ] **1. Inspect the thesis and compare two valid profit scenarios**
+- [x] **1. Inspect the thesis and compare two valid profit scenarios**
       Becomes usable: A running Aster workspace with baseline, scenario inputs and projected profit.
       Why now: Proves the distinctive financial loop before ancillary interactions.
       PRD ref: `prd.md > The Core Journey`, `Scenario and Export`
@@ -20,7 +22,7 @@ Build mode: fast; autonomous implementation explicitly requested. Human reviews 
       Learner check: Change growth to 6% and margin to 17%; inspect £22.75m against £32.21m.
       Commit: `Build transparent operating-profit workspace`
 
-- [ ] **2. Attach evidence and preserve a thesis across sessions**
+- [x] **2. Attach evidence and preserve a thesis across sessions**
       Becomes usable: Thesis, baseline and evidence editors; dated reviews; valid local persistence; independent snapshots.
       Why now: Connects a belief to observable evidence and a durable decision record.
       PRD ref: `prd.md > Thesis`, `Assumptions`, `Evidence`
@@ -30,7 +32,7 @@ Build mode: fast; autonomous implementation explicitly requested. Human reviews 
       Learner check: Attach a contrary analyst note to margin and reload.
       Commit: `Connect evidence and persist research decisions`
 
-- [ ] **3. Transfer, recover and demonstrate the final workspace**
+- [x] **3. Transfer, recover and demonstrate the final workspace**
       Becomes usable: Validated JSON transfer, confirmed reset/import, corruption recovery and reviewer docs.
       Why now: Protects user work and makes the complete demo reproducible.
       PRD ref: `prd.md > States and Boundaries`, `Acceptance Criteria`
@@ -50,9 +52,10 @@ Build mode: fast; autonomous implementation explicitly requested. Human reviews 
 
 ## Code Tour and App Map
 
-- [ ] App map generated and verified against finished code.
+- [x] App map generated, browser-loaded and verified against finished code; references are factual. Opening in the code panel was queued.
 - [ ] Personal learning reflection not supplied; no learning activity claimed.
 
 ## Revisions
 
 - User explicitly delegated decisions and requested no further questions. Planning/review gates are not treated as performed interviews or human approval; implementation proceeds under that direct instruction.
+- The first code commit integrated the small local workflow more broadly than the planned first slice. The following checkpoint added the acceptance suite, provenance labels, font notices, technical documentation and browser evidence. Actual commit names/history take precedence over the initial planned messages.

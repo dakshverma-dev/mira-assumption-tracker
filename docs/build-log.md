@@ -13,6 +13,9 @@
 - Verified arithmetic and data boundaries in 40 automated tests; exercised real browser workflows. Repaired date-input retention discovered during the browser check. Increased small-text readability and used a two-by-two assumption grid on mobile.
 - Initial code checkpoint: `fb14a7d`. Includes the integrated core loop and editing/transfer interactions; review refinements and acceptance tests follow in later commits. The first checkpoint was broader than the planned first slice because the small local workflow was implemented together.
 - User-facing copy in the app and factual technical documentation are agent-authored. Personal Devpost submission text and learning responses have not been fabricated or submitted.
+- Final implementation checkpoint `c8afeca` passed npm ci/test/build from a fresh archived checkout. Published to the public MIT GitHub repository; verified repository metadata without authentication.
+- Vercel's default command treated the new project's first deploy as production. It completed before cancellation was possible. Subsequent deployments explicitly selected preview. The final preview at deployment `dpl_691eLjCYhjHYwbowCuUcntEKYZjv` is Ready and has a verified 30-day scoped access link. No existing application was replaced.
+- Final desktop/mobile captures come from that final preview. App map opened successfully through the local server. Personal review and the required video/submission remain outstanding.
 
 ## Reuse and services
 
